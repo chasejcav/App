@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correlation Matrix Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 18px;
+            text-align: center; /* Center-align all text in table cells */
+        }
+        .styled-table th, .styled-table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: center; /* Center-align text in table headers and cells */
+        }
+        .styled-table th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .styled-table tr:nth-of-type(even) {
+            background-color: #f9f9f9;
+        }
+        .styled-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        .info-box {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Portfolio Analysis Results</h1>
+
+        <div class="info-box">
+            <h2>Date Range</h2>
+            <p><strong>Start Date:</strong> {{ start_date }}</p>
+            <p><strong>End Date:</strong> {{ end_date }}</p>
+        </div>
+
+        <div class="mt-4">
+            <h2>Correlation Matrix</h2>
+            <!-- Display HTML table for correlation matrix -->
+            {{ correlation_matrix|safe }}
+        </div>
+
+        <div class="mt-5">
+            <h2>Portfolio Metrics</h2>
+            <!-- Display portfolio metrics DataFrame -->
+            {{ metrics_df|safe }}
+        </div>
+
+        <a href="/" class="btn btn-secondary mt-3">Back to Home</a>
+    </div>
+</body>
+</html>
